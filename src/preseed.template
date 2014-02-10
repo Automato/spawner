@@ -1,0 +1,9 @@
+# Localization
+d-i debian-installer/language string {{if language}}{{language}}{{else}}en{{end}}
+d-i debian-installer/country string {{if country}}{{country}}{{else}}us{{end}}
+d-i devian-installer/locale string {{if locale}}{{locale}}{{else}}en_US.UTF-8{{end}}
+d-i keymap-select {{if keymap}}{{keymap}}{{else}}us{{end}}
+
+# Network Configuration
+d-i netcfg/choose_interface select {{if net_interface}}{{net_interface}}{{else}}auto{{end}}
+d-i netcfg/disable_autoconfig boolean {{if net_autoconfig}}{{autoconfig}}{{else}}false{{end}}

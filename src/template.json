@@ -1,0 +1,54 @@
+{
+	"description" : [
+		"A template for building a vagrant file, a QEMU image and Amazon AMI from a debian based ISO"
+	],
+	"provisioners" : [
+		"type" : "ansible-local",
+		"playbook_file" : "{{user `playbook_file`}}"
+	],
+	"builders" : [{
+			"type" : "virtualbox-iso",
+			"iso_checksum" : "{{user `iso_checksum`}}",
+			"iso_checksum_type" : "{{user `iso_checksum_type`}}",
+			"iso_url" : "{{user `iso_url}}",
+			"ssh_username" : "{{user `ssh_user_name`}}",
+			"ssh_key_path" : "{{user `ssh_key_path`}}",
+			"ssh_port" : 22,
+			"ssh_wait_timeout" : "20m",
+			"disk_size" : "{{user `disk_size`}}",
+			"format" : "ovf",
+			"headless" : true,
+			"vm_name" : "{{user `vm_name`}}-VBx",
+			"hard_drive_interface" : "sata",
+			"http_directory" : "((user `http_directory`}}",
+			"http_port_min" : 8000,
+			"http_port_max" : 9000,
+			"output_directory" : "{{user `output_directory`}}",
+			"shutdown_command" : "{{user `shutdown_command`}}",
+			"shutdown_timeout" : "3m"
+		}, {
+			"type" : "qemu",
+			"iso_checksum" : "{{user `iso_checksum`}}",
+			"iso_checksum_type" : "{{user `iso_checksum_type`}}",
+			"iso_url" : "{{user `iso_url}}",
+			"ssh_username" : "{{user `ssh_user_name`}}",
+			"ssh_key_path" : "{{user `ssh_key_path`}}",
+			"ssh_port" : 22,
+			"ssh_wait_timeout" : "20m",
+			"disk_size" : "{{user `disk_size`}}",
+			"headless" : true,
+			"vm_name" : "{{user `vm_name`}}-VBx",
+			"hard_drive_interface" : "sata",
+			"http_directory" : "((user `http_directory`}}",
+			"http_port_min" : 8000,
+			"http_port_max" : 9000,
+			"output_directory" : "{{user `output_directory`}}",
+			"shutdown_command" : "{{user `shutdown_command`}}",
+			"shutdown_timeout" : "3m",
+			"accelerator" : "{{user `accelerator`}}",
+		}
+	],
+	"post-processors" : [
+		"vagrant"
+	]
+}
