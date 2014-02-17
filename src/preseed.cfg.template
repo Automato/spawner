@@ -17,3 +17,6 @@ d-i mirror/http/hostname string {{if mirror_host}}{{mirror_host}}{{else}}http.us
 d-i mirror/http/directory string {{if directory}}{{directory}}{{else}}/debian{{end}}
 d-i mirror/http/proxy string {{if proxy}}{{proxy}}{{end}}
 d-i mirror/suite string {{if suite}}{{suite}}{{else}}testing{{end}}
+
+# Apt Settings
+d-i apt-setup/use_mirror boolean {{if use_mirror}}{{use_mirror}}{{else}}true{{end}}
