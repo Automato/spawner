@@ -46,8 +46,20 @@
 			"output_directory" : "{{user `output_directory`}}",
 			"shutdown_command" : "{{user `shutdown_command`}}",
 			"shutdown_timeout" : "3m",
-			"accelerator" : "{{user `accelerator`}}",
-		}
+			"accelerator" : "{{user `accelerator`}}"
+		},
+		{
+			"type" : "amazon-ebs",
+			"access_key" : "",
+			"ami_name" : "",
+			"instance_type" : "",
+			"region" : "",
+			"secret_key" : "",
+			"source_ami" : "",
+			"ssh_username" : "",
+			"ssh_key_path" : ""
+		},
+		
 	],
 	"post-processors" : [
 		"vagrant"
