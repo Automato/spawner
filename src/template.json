@@ -1,12 +1,5 @@
 {
-	"description" : [
-		"A template for building a vagrant file, a QEMU image and Amazon AMI from a debian based ISO"
-	],
-	"provisioners" : [{
-			"type" : "ansible-local",
-			"playbook_file" : "{{user `playbook_file`}}"
-		}
-	],
+	"description" : "A template for building a vagrant file, a QEMU image and Amazon AMI from a debian based ISO",
 	"builders" : [{
 			"boot_command": [
 				"<esc><wait>",
