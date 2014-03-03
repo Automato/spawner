@@ -49,7 +49,9 @@
 			]
 		}
 	],
-	"post-processors" : [
-		"vagrant"
+	"post-processors" : [{
+			"type": "vagrant",
+			"compression_level": 9
+		}
 	]
 }

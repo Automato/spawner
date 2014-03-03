@@ -1,0 +1,3 @@
+#!/bib/bash
+
+set -eu
