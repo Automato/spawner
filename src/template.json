@@ -64,7 +64,8 @@
 			"override": {
 				"virtualbox-iso": {
 					"scripts": [
-						"scripts/base.sh"
+						"scripts/base.sh",
+						"scripts/vagrant.sh"
 					]
 				}
 			},
@@ -72,19 +73,6 @@
 				"scripts/base.sh"
 			],
 			"type": "shell"
-		},
-		{
-			"playbook_file": "scripts/site.yml",
-			"role_paths": [
-				"scripts/roles"
-			],
-			"type": "ansible-local",
-			
-		},
-		{
-			"local_state_tree": "scripts",
-			"skip_bootstrap": true,
-			"type": "salt-masterless"
 		}
 	]
 }
