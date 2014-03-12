@@ -51,6 +51,51 @@
 				]
 			],
 			"vm_name": "debian-7.4.0-amd64"
+		},
+		{
+			"access_key": "{{}}",
+			"ami_name": "",
+			"instance_type": "",
+			"region": "",
+			"secret_key": "{{}}",
+			"source_ami": "",
+			"ssh_username": "",
+			"ami_block_device_mappings": [{
+					"":"",
+					"": 0
+				}
+			],
+			"ami_description": "",
+			"ami_groups": [
+				"",
+				""
+			],
+			"ami_regions": [
+				"",
+				""
+			],
+			"ami_users": [
+				"",
+				""
+			],
+			"iam_instance_profile": "",
+			"launch_block_device_mappings": [{
+					"": "",
+					"": 0
+				}
+			],
+			"run_tags": {
+				"": "",
+			   	"": ""
+			},
+			"security_group_id": "",
+			"ssh_port": 22,
+			"ssh_timeout": "5m",
+			"tags": {
+				"": "",
+				"": ""
+			},
+			"user_data_file": ""
 		}
 	],
 	"post-processors": [{
