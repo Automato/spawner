@@ -54,7 +54,7 @@
 		},
 		{
 			"access_key": "{{}}",
-			"ami_name": "",
+			"ami_name": "debian.7.4.0.amd64.{{timestamp | clean_ami_name}}",
 			"instance_type": "",
 			"region": "",
 			"secret_key": "{{}}",
