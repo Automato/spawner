@@ -98,7 +98,7 @@
 			"ssh_port": 22,
 			"ssh_timeout": "5m",
 			"tags": {
-				"": "",
+				"type": "building",
 				"": ""
 			},
 			"user_data_file": ""
