@@ -16,9 +16,30 @@ debug() { echo "$@" >&3 }
 ## Log all executed statements, after expansion
 set -x
 
+# Determine whether or not to operate masterlessly
+read -p "Would you like to use an existing salt master server? [Y/n]" choice
+case "$choice" in 
+ 	y|Y ) master="yes";;
+ 	n|N ) master="no";;
+	* ) echo "Invalid choice"; exit 1;;
+esac
+
+# Get some utilities we're going to need regardless and perform system update
 softwareupdate -i -a
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install saltstack
-read -p "Enter salt master-server address: " address
-echo "master: $address" > /etc/salt/minion
+
+# If master, get states from there, else pull them from git
+if [[ $master == "yes" ]]
+then
+	read -p "Enter salt master-server address: " address
+	echo "master: $address" > /etc/salt/minion
+elif [[ $master == "no" ]]
+	brew install git
+	git clone https://github.com/Automato/spawner /tmp/spawner
+then
+else
+	echo "Invalid master state"
+	exit 1
+fi
