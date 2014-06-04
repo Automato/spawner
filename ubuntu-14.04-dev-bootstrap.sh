@@ -16,8 +16,29 @@ debug() { echo "$@" >&3 }
 ## Log all executed statements, after expansion
 set -x
 
+# Determine whether or not to operate masterlessly
+read -p "Would you like to use an existing salt master server? [Y/n]" choice
+case "$choice" in 
+ 	y|Y ) master="yes";;
+ 	n|N ) master="no";;
+	* ) echo "Invalid choice"; exit 1;;
+esac
+
+# Get some utilities we're going to need regardless and perform system update
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y salt-minion
-read -p "Enter salt master-server address: " address
-echo "master: $address" > /etc/salt/minion
+
+# If master, get states from there, else pull them from git
+if [[ $master == "yes" ]]
+then
+	read -p "Enter salt master-server address: " address
+	echo "master: $address" > /etc/salt/minion
+elif [[ $master == "no" ]]
+	sudo apt install git
+	git clone https://github.com/Automato/spawner /tmp/spawner
+then
+else
+	echo "Invalid master state"
+	exit 1
+fi
