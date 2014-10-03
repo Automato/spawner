@@ -9,4 +9,4 @@ After the first provisioning, the AWS images have salt turned off and are handed
 with ansible.
 
 
-PowerShell (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DavidJFelix/spawner/master/windows7-dev-bootstrap.bat','C:\bootstrap.bat');(New-Object -com Shell.Application).ShellExecute('C:\bootstrap.bat');
+    PowerShell (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DavidJFelix/spawner/master/windows7-dev-bootstrap.bat','C:\bootstrap.bat');(New-Object -com Shell.Application).ShellExecute('C:\bootstrap.bat');
