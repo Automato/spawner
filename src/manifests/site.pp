@@ -1,38 +1,38 @@
 node default {
-  package { 'git'
-    ensure => installed,
+  package { 'git':
+    ensure => latest
   }
-  package { 'vim'
-    ensure => installed,
+  package { 'vim':
+    ensure => latest
   }
-  package { 'emacs'
-    ensure => installed,
+  package { 'emacs':
+    ensure => latest
   }
-  package { 'build-essential'
-    ensure => installed,
+  package { 'build-essential':
+    ensure => latest
   }
-  package { 'llvm'
-    ensure => installed,
+  package { 'llvm':
+    ensure => 
   }
-  package { 'clang'
-    ensure => installed,
+  package { 'clang':
+    ensure => latest
   }
-  package { 'mosh'
-    ensure => installed,
+  package { 'mosh':
+    ensure => latest
   }
-  package { 'httpie'
-    ensure => installed,
+  package { 'httpie':
+    ensure => latest
   }
-  package { 'curl'
-    ensure => installed,
+  package { 'curl':
+    ensure => latest
   }
-  package { 'zsh'
-    ensure => installed,
+  package { 'zsh':
+    ensure => latest
   }
-  package { 'screen'
-    ensure => installed,
+  package { 'screen':
+    ensure => latest
   }
-  package { 'tmux'
-    ensure => installed,
+  package { 'tmux':
+    ensure => latest
   }
 }
