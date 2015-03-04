@@ -12,7 +12,7 @@ node default {
     ensure => latest
   }
   package { 'llvm':
-    ensure => 
+    ensure => latest
   }
   package { 'clang':
     ensure => latest
