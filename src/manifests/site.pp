@@ -35,4 +35,10 @@ node default {
   package { 'tmux':
     ensure => latest
   }
+  package { 'wget':
+    ensure => latest
+  }
+  package { 'sudo':
+    ensure => latest
+  }
 }
