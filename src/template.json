@@ -20,7 +20,7 @@
 			],
 			"boot_wait": "10s",
 			"disk_size": 40000,
-			"format" : "ovf",
+			"format" : "ova",
 			"guest_additions_mode": "upload",
 			"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 			"guest_os_type": "Debian_64",
@@ -51,57 +51,6 @@
 				]
 			],
 			"vm_name": "debian-jessie-rc1"
-		},
-		{
-			"access_key": "{{}}",
-			"ami_name": "debian.jessie.amd64.{{timestamp | clean_ami_name}}",
-			"instance_type": "",
-			"region": "us-east-1",
-			"secret_key": "{{}}",
-			"source_ami": "",
-			"ssh_username": "",
-			"ami_block_device_mappings": [{
-					"":"",
-					"": 0
-				}
-			],
-			"ami_description": "",
-			"ami_groups": [
-				"",
-				""
-			],
-			"ami_regions": [
-				"ap-northeast-1",
-				"ap-southeast-1",
-				"ap-southeast-2",
-				"eu-west-1",
-				"sa-east-1",
-				"us-east-1",
-				"us-west-1",
-				"us-west-2"
-			],
-			"ami_users": [
-				"",
-				""
-			],
-			"iam_instance_profile": "",
-			"launch_block_device_mappings": [{
-					"": "",
-					"": 0
-				}
-			],
-			"run_tags": {
-				"": "",
-			   	"": ""
-			},
-			"security_group_id": "",
-			"ssh_port": 22,
-			"ssh_timeout": "5m",
-			"tags": {
-				"type": "building",
-				"": ""
-			},
-			"user_data_file": ""
 		}
 	],
 	"post-processors": [{
