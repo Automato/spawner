@@ -1,7 +1,0 @@
----
-- name: Install Salt on minions
-  hosts: salt-minions
-  user: root
-
-  roles:
-    - salt
