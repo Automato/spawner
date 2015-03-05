@@ -1,9 +1,0 @@
----
-- name: Install salt repository
-  apt_repository: repo='deb http://debian.saltstack.com/debian wheezy-saltstack main' state=present
-
-- name: Install salt gpg key
-  apt_key: url=http://debian.saltstack.com/debian-salt-team-joehealy.gpg.key id='Salt Team'
-
-- name: Install salt minion
-  apt: pkg='salt-minion' state='latest' update_cache=yes install_recommends=yes
