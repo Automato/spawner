@@ -41,4 +41,11 @@ node default {
   package { 'sudo':
     ensure => latest
   }
+  package { 'silversearcher-ag':
+    ensure => latest
+  }
+  package { 'byobu':
+    ensure => latest
+  }
+  
 }
