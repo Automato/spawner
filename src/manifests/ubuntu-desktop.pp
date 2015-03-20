@@ -2,6 +2,18 @@ node default {
   package { 'ack-grep':
     ensure => latest
   }
+  package { 'bastet':
+    ensure => latest
+  }
+  package { 'binclock':
+    ensure => latest
+  }
+  package { 'boxes':
+    ensure => latest
+  }
+  package { 'bsdgames':
+    ensure => latest
+  }
   package { 'build-essential':
     ensure => latest
   }
@@ -17,6 +29,12 @@ node default {
   package { 'clang':
     ensure => latest
   }
+  package { 'cowsay':
+    ensure => latest
+  }
+  package { 'chromium-browser':
+    ensure => latest
+  }
   package { 'curl':
     ensure => latest
   }
@@ -24,6 +42,12 @@ node default {
     ensure => latest
   }
   package { 'emacs':
+    ensure => latest
+  }
+  package { 'figlet':
+    ensure => latest
+  }
+  package { 'fortune':
     ensure => latest
   }
   package { 'gcc':
@@ -39,6 +63,9 @@ node default {
     ensure => latest
   }
   package { 'gradle':
+    ensure => latest
+  }
+  package { 'greed':
     ensure => latest
   }
   package { 'httpie':
@@ -59,7 +86,16 @@ node default {
   package { 'mercurial-git':
     ensure => latest
   }
+  package { 'moon-buggy':
+    ensure => latest
+  }
   package { 'mosh':
+    ensure => latest
+  }
+  package { 'nethack-console':
+    ensure => latest
+  }
+  package { 'ninvaders':
     ensure => latest
   }
   package { 'oracle-java6-installer':
@@ -74,10 +110,19 @@ node default {
   package { 'oracle-java9-installer':
     ensure => latest
   }
+  package { 'qemu':
+    ensure => latest
+  }
+  package { 'qemu-kvm':
+    ensure => latest
+  }
   package { 'screen':
     ensure => latest
   }
   package { 'silversearcher-ag':
+    ensure => latest
+  }
+  package { 'sl':
     ensure => latest
   }
   package { 'squid3':
@@ -87,6 +132,9 @@ node default {
     ensure => latest
   }
   package { 'sudo':
+    ensure => latest
+  }
+  package { 'toilet':
     ensure => latest
   }
   package { 'tmux':
