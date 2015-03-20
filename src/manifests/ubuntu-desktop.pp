@@ -2,7 +2,7 @@ node default {
   class { 'apt':
     always_apt_update => true
   }
-  apt::ppa { 'ppa:webupd8team/java' }
+  apt::ppa { 'ppa:webupd8team/java': }
   package { 'ack-grep':
     ensure => latest
   }
@@ -107,15 +107,15 @@ node default {
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java7-installer':
-    ensure => latest
+    ensure => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java8-installer':
-    ensure => latest
+    ensure => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java9-installer':
-    ensure => latest
+    ensure => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'qemu':
