@@ -6,6 +6,9 @@ node default {
   package { 'ack-grep':
     ensure => latest
   }
+  package { 'atop':
+    ensure => latest
+  }
   package { 'bastet':
     ensure => latest
   }
@@ -70,6 +73,9 @@ node default {
     ensure => latest
   }
   package { 'greed':
+    ensure => latest
+  }
+  package { 'htop':
     ensure => latest
   }
   package { 'httpie':
