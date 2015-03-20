@@ -84,7 +84,7 @@ node default {
   package { 'llvm':
     ensure => latest
   }
-  package { 'mecurial':
+  package { 'mercurial':
     ensure => latest
   }
   package { 'mercurial-git':
