@@ -11,6 +11,14 @@ node default {
     key               => '36A1D7869245C8950F966E92D8576A8BA88D21E9',
     include_deb       => true
   }
+  apt::source { 'erlang-solutions':
+    loaction          => 'http://packages.erlang-solutions.com/ubuntu',
+    release           => 'trusty',
+    repos             => 'contrib',
+    required_packages => 'debian-keyring debian-archive-keyring',
+    key_source        => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
+    include_deb       => true
+  }
   package { 'ack-grep':
     ensure => latest
   }
@@ -59,6 +67,13 @@ node default {
   package { 'emacs':
     ensure => latest
   }
+  package { 'erlang':
+    ensure => latest
+  }
+  package { 'elixir':
+    ensure  => latest,
+    require => Apt::Source['erlang-solutions']
+  }
   package { 'figlet':
     ensure => latest
   }
@@ -75,6 +90,9 @@ node default {
     ensure => latest
   }
   package { 'git-svn':
+    ensure => latest
+  }
+  package { 'golang':
     ensure => latest
   }
   package { 'gradle':
