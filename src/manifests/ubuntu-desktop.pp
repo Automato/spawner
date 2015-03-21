@@ -12,7 +12,7 @@ node default {
     include_deb       => true
   }
   apt::source { 'erlang-solutions':
-    loaction          => 'http://packages.erlang-solutions.com/ubuntu',
+    location          => 'http://packages.erlang-solutions.com/ubuntu',
     release           => 'trusty',
     repos             => 'contrib',
     required_packages => 'debian-keyring debian-archive-keyring',
