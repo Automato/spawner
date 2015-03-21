@@ -22,7 +22,16 @@ node default {
   package { 'ack-grep':
     ensure => latest
   }
+  package { 'ant':
+    ensure => latest
+  }
   package { 'atop':
+    ensure => latest
+  }
+  package { 'autoconf':
+    ensure => latest
+  }
+  package { 'automake':
     ensure => latest
   }
   package { 'bastet':
@@ -56,6 +65,9 @@ node default {
     ensure => latest
   }
   package { 'chromium-browser':
+    ensure => latest
+  }
+  package { 'cmake':
     ensure => latest
   }
   package { 'curl':
@@ -101,6 +113,9 @@ node default {
   package { 'greed':
     ensure => latest
   }
+  package { 'gyp':
+    ensure => latest
+  }
   package { 'htop':
     ensure => latest
   }
@@ -126,6 +141,15 @@ node default {
     ensure  => latest,
     require => Apt:Source['docker']
   }
+  package { 'make':
+    ensure => latest
+  }
+  package { 'maven':
+    ensure => latest
+  }
+  package { 'maven2':
+    ensure => latest
+  }
   package { 'mercurial':
     ensure => latest
   }
@@ -142,6 +166,9 @@ node default {
     ensure => latest
   }
   package { 'ninvaders':
+    ensure => latest
+  }
+  package { 'ninja-build':
     ensure => latest
   }
   package { 'oracle-java6-installer':
@@ -185,6 +212,12 @@ node default {
     ensure => latest
   }
   package { 'qemu-kvm':
+    ensure => latest
+  }
+  package { 'qconf:
+    ensure => latest
+  }
+  package { 'qmake':
     ensure => latest
   }
   package { 'screen':
