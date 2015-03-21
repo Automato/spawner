@@ -2,6 +2,7 @@ node default {
   class { 'apt':
     always_apt_update => true
   }
+  apt::ppa { 'ppa:hansjorg/rust': }
   apt::ppa { 'ppa:webupd8team/java': }
   apt::source { 'docker':
     location          => 'https://get.docker.com/ubuntu',
@@ -231,6 +232,14 @@ node default {
   }
   package { 'radare2':
     ensure => latest
+  }
+  package { 'rust-0.12':
+    ensure  => latest,
+    require => Apt::Ppa['ppa:hansjorg/rust']
+  }
+  package { 'rust-nightly':
+    ensure  => latest,
+    require => Apt::Ppa['ppa:hansjorg/rust']
   }
   package { 'screen':
     ensure => latest
