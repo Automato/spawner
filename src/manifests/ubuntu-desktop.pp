@@ -137,7 +137,7 @@ node default {
   package { 'links2':
     ensure => latest
   }
-  package { 'lldb':
+  package { 'lldb-3.5':
     ensure => latest
   }
   package { 'llvm':
@@ -188,19 +188,27 @@ node default {
   }
   package { 'oracle-java6-installer':
     ensure  => latest,
-    require => Apt::Ppa['ppa:webupd8team/java']
+    require => [
+      Apt::Ppa['ppa:webupd8team/java'],
+      Exec['accept_java6_license'],
+      Exec['seen_java6_license']
+    ]
   }
   package { 'oracle-java7-installer':
     ensure  => latest,
-    require => Apt::Ppa['ppa:webupd8team/java']
+    require => [
+      Apt::Ppa['ppa:webupd8team/java'],
+      Exec['accept_java7_license'],
+      Exec['seen_java7_license']
+    ]
   }
   package { 'oracle-java8-installer':
     ensure  => latest,
-    require => Apt::Ppa['ppa:webupd8team/java']
-  }
-  package { 'oracle-java9-installer':
-    ensure  => latest,
-    require => Apt::Ppa['ppa:webupd8team/java']
+    require => [
+      Apt::Ppa['ppa:webupd8team/java'],
+      Exec['accept_java8_license'],
+      Exec['seen_java8_license']
+    ]
   }
   package { 'python-virtualenv':
     ensure => latest
@@ -285,36 +293,22 @@ node default {
   package { 'zsh':
     ensure => latest
   }
-  file_line { 'accept_java6_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java6-installer shared/accepted-oracle-license-v1-1 select true'
+  exec { 'accept_java6_license':
+    command => 'echo oracle-java6-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
-  file_line { 'seen_java6_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java6-installer shared/accepted-oracle-license-v1-1 seen true'
+  exec { 'seen_java6_license':
+    command => 'echo oracle-java6-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
-  file_line { 'accept_java7_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java7-installer shared/accepted-oracle-license-v1-1 select true'
+  exec { 'accept_java7_license':
+    command => 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
-  file_line { 'seen_java7_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java7-installer shared/accepted-oracle-license-v1-1 seen true'
+  exec { 'seen_java7_license':
+    command => 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
-  file_line { 'accept_java8_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java8-installer shared/accepted-oracle-license-v1-1 select true'
+  exec { 'accept_java8_license':
+    command => 'echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
-  file_line { 'seen_java8_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true'
-  }
-  file_line { 'accept_java9_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java9-installer shared/accepted-oracle-license-v1-1 select true'
-  }
-  file_line { 'seen_java9_license':
-    path => '/usr/bin/debconf-set-selections',
-    line => 'oracle-java9-installer shared/accepted-oracle-license-v1-1 seen true'
+  exec { 'seen_java8_license':
+    command => 'echo oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
 }
