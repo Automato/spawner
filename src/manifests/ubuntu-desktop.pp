@@ -107,6 +107,9 @@ node default {
   package { 'httpie':
     ensure => latest
   }
+  package { 'leiningen':
+    ensure => latest
+  }
   package { 'links':
     ensure => latest
   }
@@ -114,6 +117,9 @@ node default {
     ensure => latest
   }
   package { 'llvm':
+    ensure => latest
+  }
+  package { 'lxc':
     ensure => latest
   }
   package { 'lxc-docker':
@@ -153,6 +159,24 @@ node default {
   package { 'oracle-java9-installer':
     ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
+  }
+  package { 'python2':
+    ensure => latest
+  }
+  package { 'python3':
+    ensure => latest
+  }
+  package { 'python2.7':
+    ensure => latest
+  }
+  package { 'python2.7-dev':
+    ensure => latest
+  }
+  package { 'python3':
+    ensure => latest
+  }
+  package { 'python3-dev':
+    ensure => latest
   }
   package { 'qemu':
     ensure => latest
