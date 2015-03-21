@@ -223,7 +223,7 @@ node default {
   package { 'qconf':
     ensure => latest
   }
-  package { 'qmake':
+  package { 'qt5-qmake':
     ensure => latest
   }
   package { 'r-base':
