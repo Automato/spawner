@@ -3,6 +3,14 @@ node default {
     always_apt_update => true
   }
   apt::ppa { 'ppa:webupd8team/java': }
+  apt::source { 'docker':
+    location          => 'https://get.docker.com/ubuntu',
+    release           => 'docker',
+    repos             => 'main',
+    required_packages => 'apt-transport-https debian-keyring debian-archive-keyring',
+    key               => '36A1D7869245C8950F966E92D8576A8BA88D21E9',
+    include_deb       => true
+  }
   package { 'ack-grep':
     ensure => latest
   }
@@ -90,6 +98,10 @@ node default {
   package { 'llvm':
     ensure => latest
   }
+  package { 'lxc-docker':
+    ensure  => latest,
+    require => Apt:Source['docker']
+  }
   package { 'mercurial':
     ensure => latest
   }
@@ -109,19 +121,19 @@ node default {
     ensure => latest
   }
   package { 'oracle-java6-installer':
-    ensure => latest,
+    ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java7-installer':
-    ensure => latest,
+    ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java8-installer':
-    ensure => latest,
+    ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'oracle-java9-installer':
-    ensure => latest,
+    ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
   package { 'qemu':
