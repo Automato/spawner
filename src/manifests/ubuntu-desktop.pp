@@ -202,12 +202,6 @@ node default {
   package { 'python-virtualenv':
     ensure => latest
   }
-  package { 'python2':
-    ensure => latest
-  }
-  package { 'python3':
-    ensure => latest
-  }
   package { 'python2.7':
     ensure => latest
   }
