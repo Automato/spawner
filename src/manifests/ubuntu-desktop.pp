@@ -18,6 +18,7 @@ node default {
     release           => 'trusty',
     repos             => 'contrib',
     required_packages => 'debian-keyring debian-archive-keyring',
+    key               => 'D208507CA14F4FCA',
     key_source        => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
     include_deb       => true,
     include_src       => false
