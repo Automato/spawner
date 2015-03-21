@@ -95,6 +95,9 @@ node default {
   package { 'gcc':
     ensure => latest
   }
+  package { 'gdb':
+    ensure => latest
+  }
   package { 'git':
     ensure => latest
   }
@@ -131,7 +134,13 @@ node default {
   package { 'links2':
     ensure => latest
   }
+  package { 'lldb':
+    ensure => latest
+  }
   package { 'llvm':
+    ensure => latest
+  }
+  package { 'lua5.2':
     ensure => latest
   }
   package { 'lxc':
@@ -169,6 +178,9 @@ node default {
     ensure => latest
   }
   package { 'ninja-build':
+    ensure => latest
+  }
+  package { 'octave': 
     ensure => latest
   }
   package { 'oracle-java6-installer':
@@ -214,10 +226,16 @@ node default {
   package { 'qemu-kvm':
     ensure => latest
   }
-  package { 'qconf:
+  package { 'qconf':
     ensure => latest
   }
   package { 'qmake':
+    ensure => latest
+  }
+  package { 'r-base':
+    ensure => latest
+  }
+  package { 'radare2':
     ensure => latest
   }
   package { 'screen':
