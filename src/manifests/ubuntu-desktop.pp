@@ -160,6 +160,9 @@ node default {
     ensure  => latest,
     require => Apt::Ppa['ppa:webupd8team/java']
   }
+  package { 'python-virtualenv':
+    ensure => latest
+  }
   package { 'python2':
     ensure => latest
   }
@@ -215,6 +218,9 @@ node default {
     ensure => latest
   }
   package { 'vim':
+    ensure => latest
+  }
+  package { 'virtualenvwrapper':
     ensure => latest
   }
   package { 'wget':
