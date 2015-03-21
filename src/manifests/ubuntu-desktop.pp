@@ -243,10 +243,6 @@ node default {
   package { 'radare2':
     ensure => latest
   }
-  package { 'rust-0.12':
-    ensure  => latest,
-    require => Apt::Ppa['ppa:hansjorg/rust']
-  }
   package { 'rust-nightly':
     ensure  => latest,
     require => Apt::Ppa['ppa:hansjorg/rust']
