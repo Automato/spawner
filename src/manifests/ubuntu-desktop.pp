@@ -10,7 +10,8 @@ node default {
     repos             => 'main',
     required_packages => 'apt-transport-https debian-keyring debian-archive-keyring',
     key               => '36A1D7869245C8950F966E92D8576A8BA88D21E9',
-    include_deb       => true
+    include_deb       => true,
+    include_src       => false
   }
   apt::source { 'erlang-solutions':
     location          => 'http://packages.erlang-solutions.com/ubuntu',
@@ -18,7 +19,8 @@ node default {
     repos             => 'contrib',
     required_packages => 'debian-keyring debian-archive-keyring',
     key_source        => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
-    include_deb       => true
+    include_deb       => true,
+    include_src       => false
   }
   package { 'ack-grep':
     ensure => latest
