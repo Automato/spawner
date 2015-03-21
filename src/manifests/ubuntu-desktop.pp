@@ -148,7 +148,7 @@ node default {
   }
   package { 'lxc-docker':
     ensure  => latest,
-    require => Apt:Source['docker']
+    require => Apt::Source['docker']
   }
   package { 'make':
     ensure => latest
