@@ -294,21 +294,21 @@ node default {
     ensure => latest
   }
   exec { 'accept_java6_license':
-    command => 'echo oracle-java6-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java6-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
   exec { 'seen_java6_license':
-    command => 'echo oracle-java6-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java6-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
   exec { 'accept_java7_license':
-    command => 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
   exec { 'seen_java7_license':
-    command => 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java7-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
   exec { 'accept_java8_license':
-    command => 'echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   }
   exec { 'seen_java8_license':
-    command => 'echo oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
+    command => '/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
 }
