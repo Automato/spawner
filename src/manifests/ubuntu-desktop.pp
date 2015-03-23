@@ -29,6 +29,7 @@ node default {
   package { 'android-studio':
     ensure  => latest,
     require => Apt::Ppa['ppa:paolorotolo/android-studio']
+  }
   package { 'ant':
     ensure => latest
   }
