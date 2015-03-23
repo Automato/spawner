@@ -18,8 +18,8 @@ node default {
     release           => 'trusty',
     repos             => 'contrib',
     required_packages => 'debian-keyring debian-archive-keyring',
-    key               => 'D208507CA14F4FCA',
-    key_source        => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
+    key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+    key_server        => 'pool.sks-keyservers.net',
     include_deb       => true,
     include_src       => false
   }
