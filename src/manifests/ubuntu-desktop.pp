@@ -19,7 +19,6 @@ node default {
     repos             => 'contrib',
     required_packages => 'debian-keyring debian-archive-keyring',
     key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
-    key_server        => 'pool.sks-keyservers.net',
     include_deb       => true,
     include_src       => false
   }
