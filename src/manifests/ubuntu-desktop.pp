@@ -4,6 +4,7 @@ node default {
   }
   apt::ppa { 'ppa:hansjorg/rust': }
   apt::ppa { 'ppa:webupd8team/java': }
+  apt::ppa { 'ppa:paolorotolo/android-studio': }
   apt::source { 'docker':
     location          => 'https://get.docker.com/ubuntu',
     release           => 'docker',
@@ -25,6 +26,9 @@ node default {
   package { 'ack-grep':
     ensure => latest
   }
+  package { 'android-studio':
+    ensure  => latest,
+    require => Apt::Ppa['ppa:paolorotolo/android-studio']
   package { 'ant':
     ensure => latest
   }
