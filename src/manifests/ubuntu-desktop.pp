@@ -26,10 +26,6 @@ node default {
   package { 'ack-grep':
     ensure => latest
   }
-  package { 'android-studio':
-    ensure  => latest,
-    require => Apt::Ppa['ppa:paolorotolo/android-studio']
-  }
   package { 'ant':
     ensure => latest
   }
