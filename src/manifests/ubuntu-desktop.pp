@@ -4,7 +4,6 @@ node default {
   }
   apt::ppa { 'ppa:hansjorg/rust': }
   apt::ppa { 'ppa:webupd8team/java': }
-  apt::ppa { 'ppa:paolorotolo/android-studio': }
   apt::source { 'docker':
     location          => 'https://get.docker.com/ubuntu',
     release           => 'docker',
