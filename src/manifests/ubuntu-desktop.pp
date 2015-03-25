@@ -50,7 +50,7 @@ node default {
     '8' {
       apt::source { 'erlang-solutions':
         location          => 'http://packages.erlang-solutions.com/debian',
-        release           => 'wheezy',
+        release           => 'jessie',
         repos             => 'contrib',
         required_packages => 'debian-keyring debian-archive-keyring',
         key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
