@@ -13,14 +13,54 @@ node default {
     include_deb       => true,
     include_src       => false
   }
-  apt::source { 'erlang-solutions':
-    location          => 'http://packages.erlang-solutions.com/ubuntu',
-    release           => 'trusty',
-    repos             => 'contrib',
-    required_packages => 'debian-keyring debian-archive-keyring',
-    key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
-    include_deb       => true,
-    include_src       => false
+  case $::operatingsystemrelease {
+    '14.04' {
+      apt::source { 'erlang-solutions':
+        location          => 'http://packages.erlang-solutions.com/ubuntu',
+        release           => 'trusty',
+        repos             => 'contrib',
+        required_packages => 'debian-keyring debian-archive-keyring',
+        key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+        include_deb       => true,
+        include_src       => false
+      }
+    }
+    '14.10' {
+      apt::source { 'erlang-solutions':
+        location          => 'http://packages.erlang-solutions.com/ubuntu',
+        release           => 'utopic',
+        repos             => 'contrib',
+        required_packages => 'debian-keyring debian-archive-keyring',
+        key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+        include_deb       => true,
+        include_src       => false
+      }
+    }
+    '7' {
+      apt::source { 'erlang-solutions':
+        location          => 'http://packages.erlang-solutions.com/debian',
+        release           => 'wheezy',
+        repos             => 'contrib',
+        required_packages => 'debian-keyring debian-archive-keyring',
+        key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+        include_deb       => true,
+        include_src       => false
+      }
+    }
+    '8' {
+      apt::source { 'erlang-solutions':
+        location          => 'http://packages.erlang-solutions.com/debian',
+        release           => 'wheezy',
+        repos             => 'contrib',
+        required_packages => 'debian-keyring debian-archive-keyring',
+        key               => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+        include_deb       => true,
+        include_src       => false
+      }
+    }
+    default {
+      fail("Unsupported operatingsystemrelease: ${::operatingsystemrelease}")
+    }
   }
   package { 'ack-grep':
     ensure => latest
@@ -83,7 +123,8 @@ node default {
     ensure => latest
   }
   package { 'erlang':
-    ensure => latest
+    ensure => latest,
+    require => Apt::Source['erlang-solutions']
   }
   package { 'elixir':
     ensure  => latest,
