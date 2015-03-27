@@ -68,6 +68,9 @@ node default {
   package { 'ant':
     ensure => latest
   }
+  package { 'aria2':
+    ensure => latest
+  }
   package { 'atop':
     ensure => latest
   }
@@ -101,7 +104,13 @@ node default {
   package { 'bzr-git':
     ensure => latest
   }
+  package { 'calcurse':
+    ensure => latest
+  }
   package { 'clang':
+    ensure => latest
+  }
+  package { 'cloc':
     ensure => latest
   }
   package { 'cowsay':
@@ -114,6 +123,18 @@ node default {
     ensure => latest
   }
   package { 'curl':
+    ensure => latest
+  }
+  package { 'dict':
+    ensure => latest
+  }
+  package { 'dstat':
+    ensure => latest
+  }
+  package { 'dtach':
+    ensure => latest
+  }
+  package { 'duplicity':
     ensure => latest
   }
   package { 'elinks':
@@ -142,6 +163,9 @@ node default {
   package { 'gdb':
     ensure => latest
   }
+  package { 'gist':
+    ensure => latest
+  }
   package { 'git':
     ensure => latest
   }
@@ -149,6 +173,9 @@ node default {
     ensure => latest
   }
   package { 'git-svn':
+    ensure => latest
+  }
+  package { 'glances':
     ensure => latest
   }
   package { 'golang':
@@ -169,10 +196,28 @@ node default {
   package { 'httpie':
     ensure => latest
   }
+  package { 'iftop':
+    ensure => latest
+  }
+  package { 'ipcalc':
+    ensure => latest
+  }
+  package { 'iptraf':
+    ensure => latest
+  }
+  package { 'iptraf-ng':
+    ensure => latest
+  }
+  package { 'irssi':
+    ensure => latest
+  }
   package { 'jq':
     ensure => latest
   }
-  package { 'leiningen':
+  package { 'ledger':
+    ensure => latest
+  }
+  package { 'less':
     ensure => latest
   }
   package { 'links':
@@ -206,6 +251,12 @@ node default {
   package { 'maven2':
     ensure => latest
   }
+  package { 'mc':
+    ensure => latest
+  }
+  package { 'mdm':
+    ensure => latest
+  }
   package { 'mercurial':
     ensure => latest
   }
@@ -218,7 +269,22 @@ node default {
   package { 'mosh':
     ensure => latest
   }
+  package { 'most':
+    ensure => latest
+  }
+  package { 'mtr':
+    ensure => latest
+  }
+  package { 'multitail':
+    ensure => latest
+  }
   package { 'nethack-console':
+    ensure => latest
+  }
+  package { 'nethogs':
+    ensure => latest
+  }
+  package { 'netpipes':
     ensure => latest
   }
   package { 'ninvaders':
@@ -254,6 +320,9 @@ node default {
       Exec['seen_java8_license']
     ]
   }
+  package { 'parallel':
+    ensure => latest
+  }
   package { 'python-virtualenv':
     ensure => latest
   }
@@ -275,6 +344,9 @@ node default {
   package { 'qemu-kvm':
     ensure => latest
   }
+  package { 'qalc':
+    ensure => latest
+  }
   package { 'qconf':
     ensure => latest
   }
@@ -287,11 +359,29 @@ node default {
   package { 'radare2':
     ensure => latest
   }
+  package { 'ranger':
+    ensure => latest
+  }
+  package { 'remind':
+    ensure => latest
+  }
+  package { 'rsync':
+    ensure => latest
+  }
+  package { 'rsyncrypto':
+    ensure => latest
+  }
+  package { 'rtorrent':
+    ensure => latest
+  }
   package { 'rust-nightly':
     ensure  => latest,
     require => Apt::Ppa['ppa:hansjorg/rust']
   }
   package { 'screen':
+    ensure => latest
+  }
+  package { 'siege':
     ensure => latest
   }
   package { 'silversearcher-ag':
@@ -300,7 +390,19 @@ node default {
   package { 'sl':
     ensure => latest
   }
+  package { 'slashem':
+    ensure => latest
+  }
+  package { 'socat':
+    ensure => latest
+  }
   package { 'squid3':
+    ensure => latest
+  }
+  package { 'steghide':
+    ensure => latest
+  }
+  package { 'stegsnow':
     ensure => latest
   }
   package { 'subversion':
@@ -309,10 +411,31 @@ node default {
   package { 'sudo':
     ensure => latest
   }
+  package { 'sysstat':
+    ensure => latest
+  }
+  package { 'task':
+    ensure => latest
+  }
+  package { 'taskwarrior':
+    ensure => latest
+  }
+  package { 'tig':
+    ensure => latest
+  }
   package { 'toilet':
     ensure => latest
   }
+  package { 'tpp':
+    ensure => latest
+  }
   package { 'tmux':
+    ensure => latest
+  }
+  package { 'tsung':
+    ensure => latest
+  }
+  package { 'ttyrec':
     ensure => latest
   }
   package { 'ubuntu-desktop':
@@ -321,13 +444,25 @@ node default {
   package { 'vagrant':
     ensure => latest
   }
+  package { 'vifm':
+    ensure => latest
+  }
   package { 'vim':
     ensure => latest
   }
   package { 'virtualenvwrapper':
     ensure => latest
   }
+  package { 'weechat':
+    ensure => latest
+  }
   package { 'wget':
+    ensure => latest
+  }
+  package { 'wyrd':
+    ensure => latest
+  }
+  package { 'xargs':
     ensure => latest
   }
   package { 'zsh':
