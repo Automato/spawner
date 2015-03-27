@@ -154,6 +154,9 @@ node default {
   package { 'figlet':
     ensure => latest
   }
+  package { 'findutils':
+    ensure => latest
+  }
   package { 'fortune':
     ensure => latest
   }
@@ -457,9 +460,6 @@ node default {
     ensure => latest
   }
   package { 'wyrd':
-    ensure => latest
-  }
-  package { 'xargs':
     ensure => latest
   }
   package { 'zsh':
