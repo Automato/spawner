@@ -14,7 +14,7 @@ node default {
     include_src       => false
   }
   case $::operatingsystemrelease {
-    '14.04' {
+    '14.04': {
       apt::source { 'erlang-solutions':
         location          => 'http://packages.erlang-solutions.com/ubuntu',
         release           => 'trusty',
@@ -25,7 +25,7 @@ node default {
         include_src       => false
       }
     }
-    '14.10' {
+    '14.10': {
       apt::source { 'erlang-solutions':
         location          => 'http://packages.erlang-solutions.com/ubuntu',
         release           => 'utopic',
@@ -36,7 +36,7 @@ node default {
         include_src       => false
       }
     }
-    '7' {
+    '7': {
       apt::source { 'erlang-solutions':
         location          => 'http://packages.erlang-solutions.com/debian',
         release           => 'wheezy',
@@ -47,7 +47,7 @@ node default {
         include_src       => false
       }
     }
-    '8' {
+    '8': {
       apt::source { 'erlang-solutions':
         location          => 'http://packages.erlang-solutions.com/debian',
         release           => 'jessie',
@@ -58,7 +58,7 @@ node default {
         include_src       => false
       }
     }
-    default {
+    default: {
       fail("Unsupported operatingsystemrelease: ${::operatingsystemrelease}")
     }
   }
