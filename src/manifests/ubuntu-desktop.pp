@@ -417,9 +417,6 @@ node default {
   package { 'task':
     ensure => latest
   }
-  package { 'taskwarrior':
-    ensure => latest
-  }
   package { 'tig':
     ensure => latest
   }
