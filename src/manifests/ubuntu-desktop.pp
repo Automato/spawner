@@ -169,6 +169,9 @@ node default {
   package { 'httpie':
     ensure => latest
   }
+  package { 'jq':
+    ensure => latest
+  }
   package { 'leiningen':
     ensure => latest
   }
