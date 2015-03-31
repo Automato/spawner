@@ -2,8 +2,12 @@ node default {
   class { 'apt':
     always_apt_update => true
   }
-  apt::ppa { 'ppa:hansjorg/rust': }
-  apt::ppa { 'ppa:webupd8team/java': }
+  apt::ppa { 'ppa:hansjorg/rust': 
+    require => Package['python-software-properties']
+  }
+  apt::ppa { 'ppa:webupd8team/java':
+    require => Package['python-software-properties']
+  }
   apt::source { 'docker':
     location          => 'https://get.docker.com/ubuntu',
     release           => 'docker',
@@ -326,6 +330,9 @@ node default {
     ]
   }
   package { 'parallel':
+    ensure => latest
+  }
+  package { 'python-software-properties':
     ensure => latest
   }
   package { 'python-virtualenv':
