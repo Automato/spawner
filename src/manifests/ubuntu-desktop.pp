@@ -111,6 +111,9 @@ node default {
   package { 'calcurse':
     ensure => latest
   }
+  package { 'cgdb':
+    ensure => latest
+  }
   package { 'clang':
     ensure => latest
   }
