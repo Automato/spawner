@@ -217,12 +217,14 @@ node default {
   package { 'jq':
     ensure => latest
   }
+  # jEnv
   package { 'ledger':
     ensure => latest
   }
   package { 'less':
     ensure => latest
   }
+  # lieningen
   package { 'links':
     ensure => latest
   }
@@ -365,6 +367,7 @@ node default {
   package { 'ranger':
     ensure => latest
   }
+  # rbenv
   package { 'remind':
     ensure => latest
   }
@@ -377,6 +380,7 @@ node default {
   package { 'rtorrent':
     ensure => latest
   }
+  # ruby versions
   package { 'rust-nightly':
     ensure  => latest,
     require => Apt::Ppa['ppa:hansjorg/rust']
