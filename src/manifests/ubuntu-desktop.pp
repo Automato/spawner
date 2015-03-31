@@ -374,7 +374,9 @@ node default {
   package { 'ranger':
     ensure => latest
   }
-  # rbenv
+  package { 'rbenv':
+    ensure => latest
+  }
   package { 'remind':
     ensure => latest
   }
@@ -387,7 +389,9 @@ node default {
   package { 'rtorrent':
     ensure => latest
   }
-  # ruby versions
+  package { 'ruby':
+    ensure => latest
+  }
   package { 'rust-nightly':
     ensure  => latest,
     require => Apt::Ppa['ppa:hansjorg/rust']
