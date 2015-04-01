@@ -332,6 +332,10 @@ node default {
       Exec['seen_java8_license']
     ]
   }
+  package { 'oracle-java8-set-default':
+    ensure  => latest,
+    require => Package['oracle-java8-installer']
+  }
   package { 'parallel':
     ensure => latest
   }
@@ -501,4 +505,31 @@ node default {
   exec { 'seen_java8_license':
     command => '/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
+  
+  # Begin IntelliJ Install
+  ## Make Opt Folder
+  file { '/opt':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '755'
+  }
+  ## Download and unpack IntelliJ ultimate
+  exec { 'download idea-ultimate':
+    command => 'curl -L https://download.jetbrains.com/idea/ideaIU-14.1.1.tar.gz | tar xzC /opt'
+  }
+  ##TODO: Create desktop entry for idea
+  ##TODO: handle versions more gracefully
+  ## create symlink to idea.sh
+  file { '/usr/local/bin/idea-ultimate.sh':
+    ensure  => link,
+    target  => '/opt/idea-IU-141.178.9/bin/idea.sh',
+    require => Exec['download idea-ultimate']
+  }
+  ## create symlink to idea.png
+  file { '/usr/share/pixmaps/idea.png':
+    ensure  => link,
+    target  => '/opt/idea-IU-141.178.9/bin/idea.png',
+    require => Exec['downlaod idea-ultimate']
+  # Done with Intellij Install
 }
