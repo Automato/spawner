@@ -1,4 +1,5 @@
 node default {
+  include git
   class { 'apt':
     always_apt_update => true
   }
@@ -177,24 +178,6 @@ node default {
     ensure => latest
   }
   package { 'gist':
-    ensure => latest
-  }
-  package { 'git':
-    ensure => latest
-  }
-  package { 'git-bzr':
-    ensure => latest
-  }
-  package { 'git-gui':
-    ensure => latest
-  }
-  package { 'git-svn':
-    ensure => latest
-  }
-  package { 'gitg':
-    ensure => latest
-  }
-  package { 'gitk':
     ensure => latest
   }
   package { 'glances':
@@ -456,9 +439,6 @@ node default {
     ensure => latest
   }
   package { 'task':
-    ensure => latest
-  }
-  package { 'tig':
     ensure => latest
   }
   package { 'toilet':
