@@ -8,6 +8,9 @@ node default {
   apt::ppa { 'ppa:webupd8team/java':
     require => Package['python-software-properties']
   }
+  apt::ppa { 'ppa:webupd8team/sublime-text-3':
+    require => Package['python-software-properties']
+  }
   apt::source { 'docker':
     location          => 'https://get.docker.com/ubuntu',
     release           => 'docker',
@@ -182,7 +185,16 @@ node default {
   package { 'git-bzr':
     ensure => latest
   }
+  package { 'git-gui':
+    ensure => latest
+  }
   package { 'git-svn':
+    ensure => latest
+  }
+  package { 'gitg':
+    ensure => latest
+  }
+  package { 'gitk':
     ensure => latest
   }
   package { 'glances':
@@ -429,6 +441,10 @@ node default {
   }
   package { 'stegsnow':
     ensure => latest
+  }
+  package { 'sublime-text-installer':
+    ensure  => latest,
+    require => Apt::Ppa['ppa:webupd8team/sublime-text-3']
   }
   package { 'subversion':
     ensure => latest
