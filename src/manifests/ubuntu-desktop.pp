@@ -3,9 +3,6 @@ node default {
   class { 'apt':
     always_apt_update => true
   }
-  apt::ppa { 'ppa:webupd8team/java':
-    require => Package['python-software-properties']
-  }
   apt::ppa { 'ppa:webupd8team/sublime-text-3':
     require => Package['python-software-properties']
   }
@@ -300,34 +297,6 @@ node default {
   package { 'octave': 
     ensure => latest
   }
-  package { 'oracle-java6-installer':
-    ensure  => latest,
-    require => [
-      Apt::Ppa['ppa:webupd8team/java'],
-      Exec['accept_java6_license'],
-      Exec['seen_java6_license']
-    ]
-  }
-  package { 'oracle-java7-installer':
-    ensure  => latest,
-    require => [
-      Apt::Ppa['ppa:webupd8team/java'],
-      Exec['accept_java7_license'],
-      Exec['seen_java7_license']
-    ]
-  }
-  package { 'oracle-java8-installer':
-    ensure  => latest,
-    require => [
-      Apt::Ppa['ppa:webupd8team/java'],
-      Exec['accept_java8_license'],
-      Exec['seen_java8_license']
-    ]
-  }
-  package { 'oracle-java8-set-default':
-    ensure  => latest,
-    require => Package['oracle-java8-installer']
-  }
   package { 'parallel':
     ensure => latest
   }
@@ -475,24 +444,6 @@ node default {
   }
   package { 'zsh':
     ensure => latest
-  }
-  exec { 'accept_java6_license':
-    command => '/bin/echo oracle-java6-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
-  }
-  exec { 'seen_java6_license':
-    command => '/bin/echo oracle-java6-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
-  }
-  exec { 'accept_java7_license':
-    command => '/bin/echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
-  }
-  exec { 'seen_java7_license':
-    command => '/bin/echo oracle-java7-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
-  }
-  exec { 'accept_java8_license':
-    command => '/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
-  }
-  exec { 'seen_java8_license':
-    command => '/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections'
   }
   
   # Begin IntelliJ Install
