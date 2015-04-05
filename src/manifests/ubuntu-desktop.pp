@@ -3,9 +3,6 @@ node default {
   class { 'apt':
     always_apt_update => true
   }
-  apt::ppa { 'ppa:hansjorg/rust': 
-    require => Package['python-software-properties']
-  }
   apt::ppa { 'ppa:webupd8team/java':
     require => Package['python-software-properties']
   }
@@ -393,10 +390,6 @@ node default {
   }
   package { 'ruby':
     ensure => latest
-  }
-  package { 'rust-nightly':
-    ensure  => latest,
-    require => Apt::Ppa['ppa:hansjorg/rust']
   }
   package { 'screen':
     ensure => latest
