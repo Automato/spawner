@@ -303,21 +303,6 @@ node default {
   package { 'python-software-properties':
     ensure => latest
   }
-  package { 'python-virtualenv':
-    ensure => latest
-  }
-  package { 'python2.7':
-    ensure => latest
-  }
-  package { 'python2.7-dev':
-    ensure => latest
-  }
-  package { 'python3':
-    ensure => latest
-  }
-  package { 'python3-dev':
-    ensure => latest
-  }
   package { 'qemu':
     ensure => latest
   }
@@ -428,9 +413,6 @@ node default {
     ensure => latest
   }
   package { 'vim':
-    ensure => latest
-  }
-  package { 'virtualenvwrapper':
     ensure => latest
   }
   package { 'weechat':
