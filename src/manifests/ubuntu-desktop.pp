@@ -70,9 +70,6 @@ node default {
   package { 'ant':
     ensure => latest
   }
-  package { 'aria2':
-    ensure => latest
-  }
   package { 'atop':
     ensure => latest
   }
@@ -139,9 +136,6 @@ node default {
   package { 'duplicity':
     ensure => latest
   }
-  package { 'elinks':
-    ensure => latest
-  }
   package { 'emacs':
     ensure => latest
   }
@@ -187,21 +181,6 @@ node default {
     ensure => latest
   }
   package { 'htop':
-    ensure => latest
-  }
-  package { 'httpie':
-    ensure => latest
-  }
-  package { 'iftop':
-    ensure => latest
-  }
-  package { 'ipcalc':
-    ensure => latest
-  }
-  package { 'iptraf':
-    ensure => latest
-  }
-  package { 'iptraf-ng':
     ensure => latest
   }
   package { 'irssi':
@@ -322,15 +301,6 @@ node default {
     ensure => latest
   }
   package { 'remind':
-    ensure => latest
-  }
-  package { 'rsync':
-    ensure => latest
-  }
-  package { 'rsyncrypto':
-    ensure => latest
-  }
-  package { 'rtorrent':
     ensure => latest
   }
   package { 'ruby':
