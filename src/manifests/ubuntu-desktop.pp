@@ -127,9 +127,6 @@ node default {
   package { 'cmake':
     ensure => latest
   }
-  package { 'curl':
-    ensure => latest
-  }
   package { 'dict':
     ensure => latest
   }
@@ -221,12 +218,6 @@ node default {
     ensure => latest
   }
   # lieningen
-  package { 'links':
-    ensure => latest
-  }
-  package { 'links2':
-    ensure => latest
-  }
   package { 'lldb-3.5':
     ensure => latest
   }
@@ -416,9 +407,6 @@ node default {
     ensure => latest
   }
   package { 'weechat':
-    ensure => latest
-  }
-  package { 'wget':
     ensure => latest
   }
   package { 'wyrd':
