@@ -6,15 +6,6 @@ node default {
   apt::ppa { 'ppa:webupd8team/sublime-text-3':
     require => Package['python-software-properties']
   }
-  apt::source { 'docker':
-    location          => 'https://get.docker.com/ubuntu',
-    release           => 'docker',
-    repos             => 'main',
-    required_packages => 'apt-transport-https debian-keyring debian-archive-keyring',
-    key               => '36A1D7869245C8950F966E92D8576A8BA88D21E9',
-    include_deb       => true,
-    include_src       => false
-  }
   case $::operatingsystemrelease {
     '14.04': {
       apt::source { 'erlang-solutions':
@@ -205,13 +196,6 @@ node default {
   }
   package { 'lua5.2':
     ensure => latest
-  }
-  package { 'lxc':
-    ensure => latest
-  }
-  package { 'lxc-docker':
-    ensure  => latest,
-    require => Apt::Source['docker']
   }
   package { 'make':
     ensure => latest
