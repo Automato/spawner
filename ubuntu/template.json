@@ -1,0 +1,74 @@
+{
+	"builders" : [
+		{
+			"boot_command": [
+				"<enter><wait><f6><esc>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+				"<bs><bs><bs>",
+				"/install/vmlinuz noapic ",
+				"file=/floppy/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{ .Name }} ",
+				"grub-installer/bootdev=/dev/sda<wait> ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"boot_wait": "10s",
+			"disk_size": 40000,
+			"format" : "ova",
+			"floppy_files": [
+				"http/preseed.cfg"
+			],
+			"guest_additions_mode": "upload",
+			"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+			"guest_os_type": "Debian_64",
+			"hard_drive_interface": "sata",
+			"headless": false,
+			"http_directory": "http",
+			"http_port_max": 9000,
+			"http_port_min": 8000,
+			"iso_checksum": "0f948fea5a587a62a873d2c001948a6ffbda20b67b05a468006caf9dfd41bcd7",
+			"iso_checksum_type": "sha256",
+			"iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04-beta2-server-amd64.iso",
+			"shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
+			"ssh_password": "vagrant",
+			"ssh_port": 22,
+			"ssh_username": "vagrant",
+			"ssh_wait_timeout": "20m",
+			"type": "virtualbox-iso",
+			"vboxmanage": [[
+					"modifyvm",
+					"{{.Name}}",
+					"--memory",
+					"4096"
+				], [
+					"modifyvm",
+					"{{.Name}}",
+					"--cpus",
+					"2"
+				]
+			],
+			"vm_name": "debian-jessie-rc1"
+		}
+	],
+	"description" : "A template for building a vagrant file, a QEMU image and Amazon AMI from a debian based ISO",
+	"min_packer_version": "0.10.0",
+	"post-processors": [
+		{
+			"compression_level": 9,
+			"keep_input_artifact": true,
+			"type": "vagrant"
+		}
+	],
+	"provisioners": [],
+	"variables": {}
+}
